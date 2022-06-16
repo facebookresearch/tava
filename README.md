@@ -1,6 +1,6 @@
 # TAVA
 
-Code base for the paper "TAVA: Template-free Animatable Volumetric Actors"
+Code for the paper "TAVA: Template-free Animatable Volumetric Actors"
 
 <div>
 <img align="center" src="assets/teaser.png" width="1000px"/>
@@ -27,8 +27,13 @@ python setup.py develop
 ## Toolbox
 - [tools/extract_mesh_weights.ipynb](tools/extract_mesh_weights.ipynb): Extracting mesh and skinning weights from the learnt canonical space.
 <img align="center" src="assets/mesh_skin_weights.png" width="60%"/>
+
 - [tools/eval_corr.ipynb](tools/eval_corr.ipynb): Evaluate the pixel-to-pixel correspondences using ground-truth mesh on Animal Data.
 
-## Misc.
+## License
+
+BSD 3-clause (see LICENSE.txt).
+
+## Misc
 
 - Training [Mip-NeRF](https://jonbarron.info/mipnerf/) on NeRF synthetic dataset: See [here](docs/mipnerf.md) for instructions.
