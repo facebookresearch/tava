@@ -1,0 +1,67 @@
+# A config for dynamic (articulated) objects.
+
+defaults:
+  - _basic  # inherit configs from _basic.yaml
+  - dataset: nerf_synthetic  # ["nerf_synthetic"]
+  - _self_
+
+hydra:
+  output_subdir: null
+  job:
+    name: "static_nerf"
+    config:
+      override_dirname:
+        # Those keys do not affect the model performance so we
+        # exclude them from the `override_dirname`, that would
+        # affect the saving directory `run.dir`. This means other
+        # than the keys listed here, other keys you set thru
+        # command line would decide which directory to save / load
+        # the model.
+        exclude_keys:
+          - dataset  # already included in the run.dir
+          - dataset.subject_id  # already included in the run.dir
+          - distributed
+          - resume
+          - resume_step
+          - resume_dir
+          - print_every
+          - save_every
+          - test_chunk
+          - eval_every
+          - eval_splits
+          - eval_per_gpu
+          - eval_cache_dir
+          - dataset.root_fp
+  run:
+    # set the saving / loading directory
+    dir: "outputs/\
+      ${hydra.job.name}/\
+      ${hydra.runtime.choices.dataset}/\
+      ${dataset.subject_id}/\
+      cfg=${hydra.job.override_dirname}/\
+      "
+      
+eval_every: 1_000
+
+# set the dataset split.
+eval_splits: ["val"]
+train_split: "train"
+
+# set the losses.
+loss_coarse_mult: 1.0
+
+# set the engine. (Trainer / Evaluator)
+engine:
+  _target_: tava.engines.trainer_static.Trainer
+
+# set the model.
+model:
+  _target_: tava.models.basic.nerf.NerfModel  
+  mlp_coarse:
+    _target_: tava.models.basic.voxel.NeRFVoxel  
+    bbox: ${dataset.bbox}
+    res: 32
+    interp_mode: "bilinear"
+  num_samples_coarse: 128
+  use_viewdirs: False
+  num_levels: 1

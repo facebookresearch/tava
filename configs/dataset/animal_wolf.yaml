@@ -1,0 +1,18 @@
+_target_: tava.datasets.animal_loader.SubjectLoader
+
+subject_id: Wolf_cub_full_RM_2
+root_fp: "/home/ruilongli/data/forest_and_friends_rendering/"
+split: ???  # to be defined in the code
+resize_factor: 1.0
+color_bkgd_aug: "random"
+num_rays: 1024
+cache_n_repeat: 5
+near: null
+far: null
+legacy: true
+
+# parameters used by models
+pose_latent_dim: 0
+n_transforms: 42
+world_dist: 0.20
+cano_dist: 0.15

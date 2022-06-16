@@ -1,0 +1,9 @@
+_target_: tava.models.deform_posi_enc.snarf.SNARFDPEncoder
+
+posi_enc:
+  _target_: tava.models.basic.posi_enc.IntegratedPositionalEncoder
+n_transforms: ${dataset.n_transforms}
+offset_net_enabled: true
+offset_pose_dim: ${dataset.pose_latent_dim}
+offset_constant_zero: false
+cano_dist: ${dataset.cano_dist}

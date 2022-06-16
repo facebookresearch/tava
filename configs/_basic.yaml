@@ -1,0 +1,28 @@
+# A basic config shared by others.
+
+distributed: true
+resume: false
+resume_step: null
+resume_dir: null
+
+lr_init: 0.0005
+lr_final: 0.000005
+lr_delay_steps: 2500
+lr_delay_mult: 0.01
+max_steps: 300_000
+weight_decay_mult: 0.0
+
+percision: float32
+print_every: 100
+save_every: 1000
+test_chunk: 512
+eval_every: 10_000
+eval_splits: []
+eval_per_gpu: 2
+eval_cache_dir: "eval_imgs_otf"
+compute_metrics: true
+train_split: ???
+
+engine: ???
+model: ???
+dataset: ???

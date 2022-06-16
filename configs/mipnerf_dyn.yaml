@@ -1,0 +1,65 @@
+# A config for dynamic (articulated) objects.
+
+defaults:
+  - _basic  # inherit configs from _basic.yaml
+  - dataset: zju  # ["zju", "animal"]
+  - pos_enc: snarf  # ["snarf", "narf"]
+  - engine: trainer  # ["trainer", "evaluator"]
+  - _self_
+
+hydra:
+  output_subdir: null
+  job:
+    name: "dynamic"
+    config:
+      override_dirname:
+        # Those keys do not affect the model performance so we
+        # exclude them from the `override_dirname`, that would
+        # affect the saving directory `run.dir`. This means other
+        # than the keys listed here, other keys you set thru
+        # command line would decide which directory to save / load
+        # the model.
+        exclude_keys:
+          - dataset  # already included in the run.dir
+          - pos_enc  # already included in the run.dir
+          - engine
+          - distributed
+          - resume
+          - resume_step
+          - resume_dir
+          - print_every
+          - save_every
+          - test_chunk
+          - eval_every
+          - eval_splits
+          - eval_per_gpu
+          - eval_cache_dir
+          - compute_metrics
+          - dataset.root_fp
+  run:
+    # set the saving / loading directory
+    dir: "outputs/\
+      ${hydra.job.name}/\
+      ${hydra.runtime.choices.dataset}/\
+      ${dataset.subject_id}/\
+      ${hydra.runtime.choices.pos_enc}/\
+      cfg=${hydra.job.override_dirname}/\
+      "
+
+# set the dataset split.
+eval_splits: ["val_ood", "val_ind"]
+train_split: "train"
+
+# set the losses.
+loss_coarse_mult: 0.1
+loss_bone_w_mult: 0.0
+loss_bone_offset_mult: 0.0
+
+# set the model.
+model:
+  _target_: tava.models.mipnerf_dyn.DynMipNerfModel
+  pos_enc: ${pos_enc}
+  shading_mode: "implicit_AO"
+  shading_pose_dim: ${dataset.pose_latent_dim}
+  world_dist: ${dataset.world_dist}
+  
