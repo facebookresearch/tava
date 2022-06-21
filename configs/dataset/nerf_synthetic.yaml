@@ -1,0 +1,13 @@
+_target_: tava.datasets.nerf_synthetic.SubjectLoader
+
+subject_id: lego
+root_fp: "./data/nerf_synthetic/"
+split: ???  # to be defined in the code
+resize_factor: 1.0
+color_bkgd_aug: "white"
+num_rays: 4096
+cache_n_repeat: 0
+near: 2.0
+far: 6.0
+
+bbox: [-1.5, -1.5, -1.5, 1.5, 1.5, 1.5]
