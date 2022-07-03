@@ -17,7 +17,7 @@
     ·
     <a href="https://christophlassner.de/"><strong>Christoph Lassner</strong></a>
   </p>
-  <p align="center" style="font-size:16px">arXiv 2022</p>
+  <p align="center" style="font-size:16px">ECCV 2022</p>
 
   <p align="center">
   <br>
@@ -72,7 +72,7 @@ BSD 3-clause (see LICENSE.txt).
 @article{li2022tava,
   title     = {TAVA: Template-free Animatable Volumetric Actors},
   author    = {Ruilong Li, Julian Tanke, Minh Vo, Michael Zollhoefer, Jürgen Gall, Angjoo Kanazawa and Christoph Lassner},
-  journal   = {arXiv preprint arXiv:2206.08929},
+  journal   = {ECCV},
   year      = {2022},
 }
 ```
