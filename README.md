@@ -72,7 +72,7 @@ BSD 3-clause (see LICENSE.txt).
 @article{li2022tava,
   title     = {TAVA: Template-free Animatable Volumetric Actors},
   author    = {Ruilong Li, Julian Tanke, Minh Vo, Michael Zollhoefer, Jürgen Gall, Angjoo Kanazawa and Christoph Lassner},
-  journal   = {ECCV},
+  journal   = {European Conference on Computer Vision},
   year      = {2022},
 }
 ```
