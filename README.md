@@ -22,7 +22,7 @@
   <p align="center">
   <br>
     <a href='https://arxiv.org/pdf/2206.08929.pdf'><img src='https://img.shields.io/badge/Paper-PDF-green?style=for-the-badge&logo=arXiv&logoColor=green' alt='Paper PDF'></a>
-    <a href='https://www.liruilong.cn/projects/tava/' style='padding-left: 0.5rem;'><img src='https://img.shields.io/badge/ICON-Page-orange?style=for-the-badge&logo=Google%20chrome&logoColor=orange' alt='Project Page'></a>
+    <a href='https://www.liruilong.cn/projects/tava/' style='padding-left: 0.5rem;'><img src='https://img.shields.io/badge/TAVA-Page-orange?style=for-the-badge&logo=Google%20chrome&logoColor=orange' alt='Project Page'></a>
   </p>
   <div align="center">
   </div>
