@@ -69,10 +69,10 @@ BSD 3-clause (see LICENSE.txt).
 ## Citation
 
 ```bibtex
-@article{li2022tava,
-  title     = {TAVA: Template-free Animatable Volumetric Actors},
-  author    = {Ruilong Li, Julian Tanke, Minh Vo, Michael Zollhoefer, Jürgen Gall, Angjoo Kanazawa and Christoph Lassner},
-  journal   = {European Conference on Computer Vision},
-  year      = {2022},
+@inproceedings{li2022tava,
+  title={TAVA: Template-free animatable volumetric actors},
+  author={Li, Ruilong and Tanke, Julian and Vo, Minh and Zollhofer, Michael and Gall, Jurgen and Kanazawa, Angjoo and Lassner, Christoph},
+  journal={European Conference on Computer Vision (ECCV)},
+  year={2022}
 }
 ```
